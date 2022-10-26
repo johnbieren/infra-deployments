@@ -1,0 +1,18 @@
+apiVersion: tenancy.kcp.dev/v1alpha1
+kind: ClusterWorkspaceType
+metadata:
+  name: gitops-environment
+spec:
+  additionalWorkspaceLabels:
+    appstudio.redhat.com/clusterworkspacetype: "gitops-environment"
+  extend:
+    with:
+    - name: appstudio
+      path: root:redhat-appstudio
+  initializer: true
+  limitAllowedChildren:
+    none: true
+  limitAllowedParents:
+    types:
+    - name: appstudio
+      path: root:redhat-appstudio

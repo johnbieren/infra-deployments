@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
 - appstudio.yaml
+- gitops-environment.yaml
